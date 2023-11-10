@@ -1,2 +1,7 @@
 /.pytest_cache
 /automatiza_excel
+.env
+__pycache__/
+venv
+.venv
+*.pyc
