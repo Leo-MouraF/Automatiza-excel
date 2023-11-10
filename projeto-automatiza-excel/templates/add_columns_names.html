@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/columns_name" method="POST" >
+    <div class="div-content">
+        {% for i in range(columns) %}
+        <label for="{{i}}"><h4>Digite o nome da coluna {{i}}</h4></label>
+        <input type="text" name="column_{{i}}">
+        {% endfor %} 
+    </div>
+    <div class="div-button">
+        <button type="submit">Concluir</button>
+    </div>
+</form>
+{% endblock %}
