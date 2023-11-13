@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+<form action="/row_values" method="POST" >
+    <div class="div-content">
+        {% for i in session['columns'] %}
+        <label for="{{i}}"><h4>Digite o valor para {{i}}</h4></label>
+        <input type="text" name="{{i}}">
+        {% endfor %} 
+    </div>
+    <div class="div-button">
+        <button type="submit">Concluir</button>
+    </div>
+    <div class="div-button">
+        <button type="submit">Adicionar linha</button>
+    </div>
+</form>
+{% endblock %}
