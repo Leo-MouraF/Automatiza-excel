@@ -1,0 +1,23 @@
+.main-div-bg {
+    background: green;
+}
+
+.main-div-content {
+    background: pink;
+}
+
+.footer-bg {
+    background: red;
+}
+
+.footer-content {
+    background: purple;
+}
+
+.div-content {
+    background: yellow;
+}
+
+.div-button {
+    background: blue;
+}
