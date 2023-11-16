@@ -7,11 +7,13 @@
         <input type="text" name="{{i}}">
         {% endfor %} 
     </div>
-    <div class="div-button">
-        <button type="submit">Concluir</button>
-    </div>
-    <div class="div-button">
-        <button type="submit">Adicionar linha</button>
-    </div>
+        <div class="div-button">
+            <button type="submit">Adicionar linha</button>
+        </div>
 </form>
+    <form action="/conclude_table">
+        <div class="div-button">
+            <button type="submit">Concluir</button>
+        </div>
+    </form>
 {% endblock %}

@@ -20,6 +20,11 @@ def index():
 			if not session:
 				session['columns'] = []
 				session['rows'] = []
+			else:
+				session.pop('columns', None)
+				session.pop('rows', None)
+				session['columns'] = []
+				session['rows'] = []
 			return render_template('add_columns_names.html', columns=columns)
 		except ValueError as e:
 			return f'Por favor, digitar um número. Erro: {e}'
@@ -40,7 +45,20 @@ def columns_name():
 def row_values():
 	if request.method == 'POST':
 		data = request.form
+		print(data)
 		for i in session['columns']:
 			session['rows'].append(data[i])
-			print(session['rows'])
 	return redirect(request.referrer)
+
+
+@app.route('/conclude_table', methods=['GET', 'POST'])
+def make_table():
+	if request.method == 'POST':
+		data = request.form
+		if data['table_name'] != '':
+			print('Nome da tabela: ', data['table_name'])
+			return render_template('index.html')
+		return 'Favor, digitar um nome para sua tabela.'
+	print(session['columns'])
+	print(session['rows'])
+	return render_template('conclude.html')
