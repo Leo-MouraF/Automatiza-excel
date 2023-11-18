@@ -1,12 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
 <form action="/conclude_table" method="POST">
+    <h1> Para finalizar, escreva o nome do seu arquivo. </h1>
     <div class="div-content">
-        <label for="table_name"><h4>Digite o nome do seu arquivo excel: </h4></label>
-        <input type="text" name="table_name">
-    </div>
-    <div class="div-button">
-        <button type="submit">Finalizar</button>
+        <span>
+            <label for="table_name"><h4>Nome: </h4></label>
+            <input type="text" name="table_name">
+        </span>
+        <div class="div-button">
+            <button type="submit">Finalizar</button>
+        </div>
     </div>
 </form>
 {% endblock %}

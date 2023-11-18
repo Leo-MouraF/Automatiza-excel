@@ -1,23 +1,126 @@
-.main-div-bg {
-    background: green;
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: #706e6e;
+}
+
+h1 {
+    display: block;
+    text-align: center;
+    margin: 50px auto;
 }
 
 .main-div-content {
-    background: pink;
-}
-
-.footer-bg {
-    background: red;
-}
-
-.footer-content {
-    background: purple;
+    max-width: 650px;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .div-content {
-    background: yellow;
+    padding: 60px;
+    margin-top: 20px;
+    display: grid;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #999494, #817c7c);
+    box-shadow: 10px 10px 60px #605d5d,
+                -10px -10px 60px #605d5d;
+}
+
+.div-content span {
+    margin: 0 auto;
+}
+
+.div-content h4 {
+    margin: 20px auto;
+    font-size: 1.25em;
+}
+
+.div-content input {
+    width: 200px;
 }
 
 .div-button {
-    background: blue;
+    display: block;
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+.div-button button {
+    font-size: 1em;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #d3cece, #c9bdbd);
+    box-shadow: 8px 5px 10px #605d5d,
+                -8px -5px 10px #605d5d;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.div-button button:hover {
+    background: linear-gradient(145deg, #353434, #221f1f);
+    color: white;
+    opacity: 1;
+}
+
+
+.footer-bg {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 60px;
+    margin-top: 20px;
+    background: #999494;
+    box-shadow: -1px -15px 20px #514e4e;
+}
+
+.footer-content p {
+    margin: 0 auto;
+
+}
+
+.footer-content a {
+    text-decoration: none;
+    border-radius: 61px;
+    background: linear-gradient(145deg, #999494, #a39e9e);
+    box-shadow:  29px 29px 57px #817c7c,
+                -29px -29px 57px #aea8a8;
+    padding: 20px;
+    color: black;
+    opacity: 0.7;
+    transition: 1s;
+}
+
+.footer-content a:hover {
+    background: linear-gradient(145deg, #5d5a5a, #433d3d);
+    opacity: 1;
+    color: white;
+}
+
+.conlude-button {
+    margin: 20px auto;
+    width: 100%;
+    border: 1px solid red;
+    /* display: grid; */
+}
+
+.conclude-button button {
+    width: 100%;
+    background: black;
+    color: white;
+}
+
+.text {
+    color: white;
 }

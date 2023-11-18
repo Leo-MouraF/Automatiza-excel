@@ -1,7 +1,7 @@
 from pathlib import Path
 
+from app_service import write_csv
 from flask import Flask, redirect, render_template, request, session, url_for
-from openpyxl import Workbook
 
 app = Flask(__name__)
 CAMINHO_EXCEL = Path(__file__) / 'arquivos-excel/'
@@ -36,8 +36,11 @@ def columns_name():
 		data = request.form.to_dict()
 		input = []
 		for name, value in data.items():
-			input.append(value)
-			session['columns'] = input
+			if data[name] == '':
+				return 'Favor, digitar um valor para cada campo.'
+			else:
+				input.append(value)
+				session['columns'] = input
 	return render_template("add_rows.html")
 
 
@@ -45,9 +48,14 @@ def columns_name():
 def row_values():
 	if request.method == 'POST':
 		data = request.form
-		print(data)
+		tupla = []
 		for i in session['columns']:
-			session['rows'].append(data[i])
+			if data[i] == "":
+				return 'Por favor, digitar um valor para cada célula.'
+			else:	
+				tupla.append(data[i])
+	tupla = tuple(tupla)
+	session['rows'].append(tupla)
 	return redirect(request.referrer)
 
 
@@ -56,9 +64,7 @@ def make_table():
 	if request.method == 'POST':
 		data = request.form
 		if data['table_name'] != '':
-			print('Nome da tabela: ', data['table_name'])
+			write_csv(data['table_name'], session['rows'], session['columns'])
 			return render_template('index.html')
 		return 'Favor, digitar um nome para sua tabela.'
-	print(session['columns'])
-	print(session['rows'])
 	return render_template('conclude.html')

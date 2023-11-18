@@ -1,14 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
 <form action="/columns_name" method="POST" >
+    <h1> Dê o nome de cada coluna </h1>
     <div class="div-content">
         {% for i in range(columns) %}
-        <label for="{{i}}"><h4>Digite o nome da coluna {{i}}</h4></label>
-        <input type="text" name="column_{{i}}">
+        <span>
+            <label for="{{i}}"><h4>Digite o nome da coluna {{i}}</h4></label>
+            <input type="text" name="column_{{i}}">
+        </span>
         {% endfor %} 
-    </div>
-    <div class="div-button">
-        <button type="submit">Concluir</button>
+        <div class="div-button">
+            <button type="submit">Concluir</button>
+        </div>
     </div>
 </form>
 {% endblock %}

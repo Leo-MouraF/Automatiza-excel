@@ -1,18 +1,31 @@
 {% extends "layout.html" %}
 {% block content %}
 <form action="/row_values" method="POST" >
+    <h1> Escreva o valor de cada célula </h1>
+    <div class="text">
+        <p> 
+            Aqui você irá adicionar as informações para cada célula em sua 
+            respectiva coluna.
+        <p>
+        <p> 
+            Basta clicar em "Adicionar linha" para adicionar o valor ao arquivo.
+        </p>
+        <p> Após adicionar o último valor, basta clicar em "Concluir". </p>
+    </div>
     <div class="div-content">
         {% for i in session['columns'] %}
-        <label for="{{i}}"><h4>Digite o valor para {{i}}</h4></label>
-        <input type="text" name="{{i}}">
+        <span>
+            <label for="{{i}}"><h4>Digite o valor para {{i}}</h4></label>
+            <input type="text" name="{{i}}">
+        </span>
         {% endfor %} 
-    </div>
         <div class="div-button">
             <button type="submit">Adicionar linha</button>
         </div>
+    </div>
 </form>
     <form action="/conclude_table">
-        <div class="div-button">
+        <div class="conlude-button">
             <button type="submit">Concluir</button>
         </div>
     </form>

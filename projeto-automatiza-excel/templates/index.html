@@ -1,14 +1,15 @@
 {% extends "layout.html" %}
 {% block content %}
 <form method="POST" action="/">
+    <h1> Digite o número de colunas </h1>
     <div class="div-content">
         <span>
-            <label for="number_of_columns"><h4>Digite o número de colunas</h4></label>
+            <label for="number_of_columns"><h4>Colunas: </h4></label>
             <input type="text" name="number_of_columns" placeholder="Digite um número">
         </span>
-    </div>
-    <div class="div-button">
-        <button type="submit">Confirmar</button>
+        <div class="div-button">
+            <button type="submit">Confirmar</button>
+        </div>
     </div>
 </form>
 {% endblock %}
