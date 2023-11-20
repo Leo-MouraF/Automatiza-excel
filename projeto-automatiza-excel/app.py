@@ -13,6 +13,12 @@ def antes_da_solicitacao():
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
+	"""
+	Renderiza página inicial da aplicação. Recebe o número de colunas do
+	arquivo.
+	Abre as sessões rows e columns, que guardarão os valores das linhas e 
+	colunas, respectivamente.
+	"""
 	if request.method == 'POST':
 		try:
 			data = request.form
@@ -32,6 +38,11 @@ def index():
 
 @app.route('/columns_name', methods=['GET', 'POST'])
 def columns_name():
+	"""
+	Renderiza a página para receber o nome de cada coluna, de acordo com o 
+	número inserido pelo usuário na página anterior. Atribui os nomes a sessão
+	columns.
+	"""
 	if request.method == 'POST':
 		data = request.form.to_dict()
 		input = []
@@ -46,6 +57,11 @@ def columns_name():
 
 @app.route('/row_values', methods=['GET', 'POST'])
 def row_values():
+	"""
+	Renderiza a página para a inserção dos dados de cada linhas. Os campos são
+	gerados a partir da quantidade de colunas existentes em columns. 
+	Após adicionar a linhas, retorna a mesma página para novos dados. 
+	"""
 	if request.method == 'POST':
 		data = request.form
 		tupla = []
@@ -61,6 +77,12 @@ def row_values():
 
 @app.route('/conclude_table', methods=['GET', 'POST'])
 def make_table():
+	"""
+	Renderiza a página para receber o nome do arquivo, essa página é acessada
+	após o usuário clicar em concluir na página que refere a função row_values.
+	Cria o arquivo na mesma pasta do arquivo app e retorna para a página index 
+	para novo arquivo, se desejado.
+	"""
 	if request.method == 'POST':
 		data = request.form
 		if data['table_name'] != '':

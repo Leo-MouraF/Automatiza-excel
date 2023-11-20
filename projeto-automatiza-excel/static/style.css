@@ -112,13 +112,27 @@ h1 {
     margin: 20px auto;
     width: 100%;
     border: 1px solid red;
-    /* display: grid; */
 }
 
 .conclude-button button {
     width: 100%;
-    background: black;
+    margin-top: 15px;
+    font-size: 1em;
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(145deg, #d3cece, #c9bdbd);
+    box-shadow: 8px 5px 10px #605d5d,
+                -8px -5px 10px #605d5d;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.conclude-button button:hover {
+    background: linear-gradient(145deg, #353434, #221f1f);
     color: white;
+    opacity: 1;
 }
 
 .text {

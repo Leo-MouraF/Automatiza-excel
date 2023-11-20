@@ -1,12 +1,15 @@
 import csv
 
-# from pathlib import Path
-
-# CAMINHO_EXCEL = Path(__file__) / 'arquivos-excel/'
 
 def write_csv(data, rows, columns):
+	"""
+	Faz o processamento dos dados inseridos pelo usuário, escrevendo um arquivo
+	no formato CSV.
+	data: Nome do arquivo;
+	rows: É o session['rows'], as linhas inseridas;
+	columns: É o session['columns'], o identificador dos dados.
+	"""
 	filename = f'{data}.csv'
-	print(filename)
 	with open(filename, 'w', newline='') as file:
 		dados = csv.writer(file)
 		dados.writerow(columns)
